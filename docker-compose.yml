@@ -1,10 +1,5 @@
 version: '2'
 
-networks:
-  proxy:
-    external:
-      name: nginxproxy_default
-
 services:
  globalsight:
    build: ./gs/
@@ -16,9 +11,6 @@ services:
    volumes:
     - gs_filestorage:/home/jboss/fileStorage
     - gs_docs:/home/jboss/docs
-   networks:
-    - default
-    - proxy
 
  globalsight_db:
    image: mysql:5.7
