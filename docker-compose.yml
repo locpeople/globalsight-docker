@@ -8,10 +8,11 @@ networks:
 services:
  globalsight:
    build: ./gs/
+   image: locpeople/globalsight
    container_name: globalsight
    ports:
     - 4567:80
-    
+
    volumes:
     - gs_filestorage:/home/jboss/fileStorage
     - gs_docs:/home/jboss/docs
